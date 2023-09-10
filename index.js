@@ -23,7 +23,6 @@ db.connect((error) => {
 })
 app.use(cors());
 
-// let minutes = 5;
 // let the_interval = minutes * 60 * 1000;
 let the_interval = 30000; // 30 sec
 
