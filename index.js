@@ -85,13 +85,13 @@ setInterval(function () {
                             update_sql = `UPDATE
                                 subscribed_user_content
                                 SET
-                                status = 'SENT',
+                                status = 'SENT'
                                 WHERE id = ${element.id}`;
                         } else {
                             update_sql = `UPDATE
                                 subscribed_user_content
                                 SET
-                                status = 'FAILED',
+                                status = 'FAILED'
                                 WHERE id = ${element.id}`;
                             console.error('Unknown API response:', body);
                         }
