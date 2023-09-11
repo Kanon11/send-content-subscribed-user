@@ -81,9 +81,7 @@ setInterval(function () {
                 } else {
                     // Parse the API response (assuming it's JSON)
                     try {
-                        const data = JSON.parse(body);
-
-                        if (data && data.response === 'success') {
+                        if (body && body === 'success') {
                             update_sql = `UPDATE
                                 subscribed_user_content
                                 SET
@@ -95,7 +93,7 @@ setInterval(function () {
                                 SET
                                 status = 'FAILED',
                                 WHERE id = ${element.id}`;
-                            console.error('Unknown API response:', data);
+                            console.error('Unknown API response:', body);
                         }
                         console.log("update_sql: ", update_sql);
                         db.query(update_sql, (e, d) => {
