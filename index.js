@@ -40,7 +40,7 @@ function generateRandom16DigitNumber() {
 }
 
 setInterval(function () {
-    let sql = ` SELECT * FROM subscribed_user_content WHERE DATE(NOW())=DATE(schedule_date) AND status='QUE' ORDER BY RAND() LIMIT 2`;
+    let sql = ` SELECT * FROM subscribed_user_content WHERE DATE(NOW())=DATE(schedule_date) AND status='QUE' ORDER BY RAND() LIMIT 10`;
     db.query(sql, (err, data) => {
         if (err) {
             console.log(err);
