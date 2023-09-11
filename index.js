@@ -45,6 +45,9 @@ setInterval(function () {
         if (err) {
             console.log(err);
         }
+        if (data.length == 0) {
+            console.log("No data found to sent");
+        }
         for (let index = 0; index < data.length; index++) {
             const element = data[index];
 
