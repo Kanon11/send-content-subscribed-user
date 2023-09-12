@@ -117,7 +117,7 @@ setInterval(function () {
         }
 
     })
-    console.log(`call after 30 second`);
+    console.log(`call after 5 second`);
 }, the_interval);
 
 
