@@ -24,7 +24,7 @@ db.connect((error) => {
 app.use(cors());
 
 // let the_interval = minutes * 60 * 1000;
-let the_interval = 30000; // 30 sec
+let the_interval = 5000; // 30 sec
 
 function generateRandom16DigitNumber() {
     // Generate a random fractional number between 0 and 1
@@ -40,7 +40,7 @@ function generateRandom16DigitNumber() {
 }
 
 setInterval(function () {
-    let sql = ` SELECT * FROM subscribed_user_content WHERE DATE(NOW())=DATE(schedule_date) AND status='QUE' ORDER BY RAND() LIMIT 10`;
+    let sql = ` SELECT * FROM subscribed_user_content WHERE DATE(NOW())=DATE(schedule_date) AND status='QUE' ORDER BY RAND() LIMIT 1`;
     db.query(sql, (err, data) => {
         if (err) {
             console.log(err);
